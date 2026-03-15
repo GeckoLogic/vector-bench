@@ -1,0 +1,17 @@
+{
+  "wikipedia_ai": {
+    "What is artificial intelligence?": ["chunk_0", "chunk_1"],
+    "When was AI founded?": ["chunk_2", "chunk_3"],
+    "What are AI applications?": ["chunk_4", "chunk_5"]
+  },
+  "scientific_paper": {
+    "What is the paper about?": ["chunk_0"],
+    "How does attention work?": ["chunk_2", "chunk_3"],
+    "What is an encoder-decoder?": ["chunk_4"]
+  },
+  "news_articles": {
+    "AI regulation news": ["chunk_0", "chunk_1"],
+    "New language model": ["chunk_2", "chunk_3"],
+    "Robotics manufacturing": ["chunk_4", "chunk_5"]
+  }
+}

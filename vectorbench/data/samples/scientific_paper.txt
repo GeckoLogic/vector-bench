@@ -1,0 +1,33 @@
+Transformer Architectures for Natural Language Processing: A Survey of Attention Mechanisms and Encoder-Decoder Designs
+
+Abstract
+
+Transformer architectures have fundamentally reshaped the landscape of natural language processing since their introduction in the landmark paper "Attention Is All You Need" by Vaswani et al. (2017). Unlike recurrent and convolutional approaches that dominated NLP for the preceding decade, Transformers rely entirely on self-attention mechanisms to model relationships between tokens in a sequence, enabling highly parallelizable training and superior capture of long-range dependencies. This paper surveys the core architectural components of Transformers, with particular focus on scaled dot-product attention, multi-head attention, and the encoder-decoder framework. We review the theoretical properties of these mechanisms, discuss the practical considerations that govern their behavior at scale, and summarize the evolution of transformer-based models from the original architecture through BERT, GPT, and T5. Our analysis highlights the trade-offs between encoder-only, decoder-only, and encoder-decoder designs and their suitability for different NLP tasks.
+
+1. Introduction
+
+Natural language processing has undergone a paradigm shift over the past several years, driven largely by the adoption of transformer-based architectures. Prior to Transformers, recurrent neural networks (RNNs) and their variants—long short-term memory (LSTM) networks and gated recurrent units (GRUs)—were the dominant approach for sequence modeling tasks. These architectures process tokens sequentially, maintaining a hidden state that carries information forward through the sequence. While effective, this sequential processing creates a fundamental bottleneck: gradients must flow through many time steps, making it difficult to capture very long-range dependencies and limiting the degree to which computation can be parallelized during training.
+
+Convolutional neural networks (CNNs) were also applied to NLP, particularly for sentence classification tasks. CNNs offer parallelism through their filter-based architecture but are constrained by fixed receptive field sizes; capturing relationships between tokens that are far apart in a sequence requires stacking many convolutional layers.
+
+The Transformer architecture addressed both of these limitations by replacing recurrence and convolution with attention mechanisms that directly compute relationships between all pairs of tokens in a sequence, regardless of their distance. This design choice allows Transformers to capture long-range dependencies within a single layer and enables full parallelization of the training process across tokens.
+
+2. Attention Mechanisms
+
+The core computational primitive in Transformer architectures is the attention mechanism, specifically scaled dot-product attention. Given a set of queries Q, keys K, and values V (all represented as matrices), attention is computed as:
+
+    Attention(Q, K, V) = softmax(QK^T / sqrt(d_k)) V
+
+where d_k is the dimensionality of the key vectors. The scaling factor 1/sqrt(d_k) prevents the dot products from growing too large in magnitude, which would push the softmax function into regions of very small gradients and impede learning.
+
+Intuitively, this operation computes a weighted sum of the value vectors, where the weights are determined by the compatibility between each query and each key. Tokens with high compatibility receive high attention weights, allowing the model to selectively aggregate information from relevant positions in the sequence.
+
+Multi-head attention extends this mechanism by running h parallel attention heads, each with its own learned projections of Q, K, and V into a lower-dimensional space. The outputs of all heads are concatenated and projected back to the model dimension. Multi-head attention allows the model to jointly attend to information from different representation subspaces at different positions, capturing richer relational structure than a single attention operation could provide.
+
+3. Encoder-Decoder Architecture
+
+The original Transformer proposed by Vaswani et al. consists of an encoder and a decoder, each composed of a stack of identical layers. The encoder processes the input sequence and produces a sequence of contextualized representations. Each encoder layer applies multi-head self-attention followed by a position-wise feed-forward network, with layer normalization and residual connections around each sub-layer.
+
+The decoder generates the output sequence token by token in an autoregressive fashion. Each decoder layer includes three sub-layers: masked multi-head self-attention (which prevents the decoder from attending to future positions), cross-attention over the encoder outputs (allowing the decoder to attend to all encoder positions), and a position-wise feed-forward network. This encoder-decoder design is well suited to sequence-to-sequence tasks such as machine translation and summarization, where the input and output sequences may have different lengths and structures.
+
+Subsequent work has demonstrated that different task families benefit from different architectural choices. Encoder-only models such as BERT excel at understanding tasks—classification, named entity recognition, and question answering—by producing rich bidirectional contextual representations. Decoder-only models such as GPT are optimized for generation tasks, learning to predict the next token given all previous tokens. Encoder-decoder models such as T5 and BART provide a unified framework applicable to both understanding and generation tasks through a text-to-text formulation.

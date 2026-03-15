@@ -1,0 +1,33 @@
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Package build
+*.egg-info/
+dist/
+
+# Virtual environment
+.venv/
+
+# Runtime data (generated on first run)
+data/chroma_db/
+data/cache/
+data/registry.json
+
+# Secrets
+.env
+.streamlit/secrets.toml
+
+# Test coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Claude
+PROMPT.md
+.claude
+.claudeignore

@@ -20,9 +20,9 @@ I built VectorBench as a hands-on learning and experimentation tool. Rather than
 
 | | | |
 |---|---|---|
-| <img src="assets/0_GetStarted.png" width="220"/> | <img src="assets/1_Dataset.png" width="220"/> | <img src="assets/3_Embed.png" width="220"/> |
+| [<img src="assets/0_GetStarted.png" width="220"/>](SCREENSHOTS.md#get-started) | [<img src="assets/1_Dataset.png" width="220"/>](SCREENSHOTS.md#dataset) | [<img src="assets/3_Embed.png" width="220"/>](SCREENSHOTS.md#embed) |
 | Get Started | Dataset | Embed |
-| <img src="assets/4_Search.png" width="220"/> | <img src="assets/5_Evaluate.png" width="220"/> | <img src="assets/6_Explorer.png" width="220"/> |
+| [<img src="assets/4_Search.png" width="220"/>](SCREENSHOTS.md#search) | [<img src="assets/5_Evaluate.png" width="220"/>](SCREENSHOTS.md#evaluate) | [<img src="assets/6_Explorer.png" width="220"/>](SCREENSHOTS.md#explorer) |
 | Search | Evaluate | Explorer |
 
 ---

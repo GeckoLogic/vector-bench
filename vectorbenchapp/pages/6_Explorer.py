@@ -1,8 +1,8 @@
 """Page 6: UMAP/t-SNE embedding space explorer."""
 import streamlit as st
 import numpy as np
-from app.state import _init_defaults, get_current_experiment
-from app.components.scatter_plot import render_scatter_2d, render_scatter_3d
+from vectorbenchapp.state import _init_defaults, get_current_experiment
+from vectorbenchapp.components.scatter_plot import render_scatter_2d, render_scatter_3d
 from vectorbench.reduction.reducer import reduce_embeddings
 
 _init_defaults()

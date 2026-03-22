@@ -8,7 +8,7 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-from app.state import _init_defaults, restore_from_registry, delete_experiment_from_session
+from vectorbenchapp.state import _init_defaults, restore_from_registry, delete_experiment_from_session
 
 _init_defaults()
 restore_from_registry()  # Reload persisted experiments on every fresh session

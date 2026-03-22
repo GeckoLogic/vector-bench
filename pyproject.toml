@@ -37,7 +37,7 @@ filterwarnings = [
 
 [tool.coverage.run]
 source = ["vectorbench"]
-omit = ["tests/*", "app/*"]
+omit = ["tests/*", "vectorbenchapp/*"]
 
 [tool.coverage.report]
 show_missing = true

@@ -37,7 +37,7 @@ pip install -e ".[dev]"
 python -c "import nltk; nltk.download('punkt_tab')"
 
 # Run
-streamlit run app/Get_Started.py
+streamlit run vectorbenchapp/Get_Started.py
 ```
 
 Open http://localhost:8501
@@ -56,7 +56,7 @@ Open http://localhost:8501. Models are downloaded on first run and cached in a n
 
 ```mermaid
 flowchart TD
-    subgraph UI["Streamlit App (app/)"]
+    subgraph UI["Streamlit App (vectorbenchapp/)"]
         P0[Get Started] --> P1[1 Dataset]
         P1 --> P2[2 Chunking Playground]
         P2 --> P3[3 Embed]
@@ -161,7 +161,7 @@ vectorbench/
 │   ├── reduction/          # UMAP / t-SNE / PCA
 │   ├── experiment/         # ExperimentConfig, ExperimentRunner, JSON registry
 │   └── data/               # sample datasets + ground_truth.json
-├── app/
+├── vectorbenchapp/
 │   ├── Get_Started.py      # landing page + sidebar experiment list
 │   ├── state.py            # PipelineStage enum, typed session helpers
 │   ├── components/         # chunk_preview, embedding_table, scatter_plot

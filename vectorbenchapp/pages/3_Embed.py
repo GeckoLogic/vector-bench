@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
-from app.state import (
+from vectorbenchapp.state import (
     get_dataset_text, _init_defaults,
     set_current_experiment,
 )
@@ -15,7 +15,7 @@ from vectorbench.embedding.registry import MODEL_REGISTRY
 from vectorbench.experiment.config import ExperimentConfig
 from vectorbench.experiment.runner import ExperimentRunner
 from vectorbench.experiment.registry import save_experiment
-from app.components.embedding_table import render_embedding_table
+from vectorbenchapp.components.embedding_table import render_embedding_table
 
 _init_defaults()
 st.set_page_config(page_title="Embed — VectorBench", layout="wide")
@@ -169,7 +169,7 @@ with tab_single:
         set_current_experiment(config, result["chunks"], result["embeddings"], result["store"])
         save_experiment(config)
 
-    from app.state import get_chunks, get_embeddings
+    from vectorbenchapp.state import get_chunks, get_embeddings
     chunks = get_chunks()
     embeddings = get_embeddings()
     if chunks and embeddings is not None:

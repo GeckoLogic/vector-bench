@@ -20,4 +20,4 @@ RUN python -c "import nltk; nltk.download('punkt'); nltk.download('punkt_tab')"
 
 EXPOSE 8501
 
-CMD ["streamlit", "run", "app/Get_Started.py", "--server.address=0.0.0.0", "--server.port=8501"]
+CMD ["streamlit", "run", "vectorbenchapp/Get_Started.py", "--server.address=0.0.0.0", "--server.port=8501"]

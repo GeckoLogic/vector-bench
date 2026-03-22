@@ -1,6 +1,6 @@
 """Page 1: Dataset selection and upload."""
 import streamlit as st
-from app.state import advance_to, PipelineStage
+from vectorbenchapp.state import advance_to, PipelineStage
 from vectorbench.data.loader import list_sample_datasets, load_sample_dataset, load_uploaded_text
 
 st.set_page_config(page_title="Dataset — VectorBench", layout="wide")

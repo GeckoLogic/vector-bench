@@ -1,8 +1,8 @@
 """Page 2: Live chunking strategy comparison."""
 import re
 import streamlit as st
-from app.state import get_dataset_text, get_pipeline_stage, PipelineStage
-from app.components.chunk_preview import render_chunk_preview, render_chunk_stats
+from vectorbenchapp.state import get_dataset_text, get_pipeline_stage, PipelineStage
+from vectorbenchapp.components.chunk_preview import render_chunk_preview, render_chunk_stats
 from vectorbench.chunking import (
     FixedChunker, OverlappingChunker, SentenceChunker, ParagraphChunker, DocumentChunker
 )

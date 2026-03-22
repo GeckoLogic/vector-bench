@@ -2,7 +2,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-from app.state import _init_defaults
+from vectorbenchapp.state import _init_defaults
 from vectorbench.embedding.sentence_transformer import SentenceTransformerEmbedder
 from vectorbench.evaluation.comparison import compare_experiments, summary_stats
 

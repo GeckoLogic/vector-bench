@@ -1,7 +1,7 @@
 """Page 4: Semantic search against the vector store."""
 import streamlit as st
 import pandas as pd
-from app.state import _init_defaults
+from vectorbenchapp.state import _init_defaults
 from vectorbench.embedding.sentence_transformer import SentenceTransformerEmbedder
 from vectorbench.embedding.registry import MODEL_REGISTRY
 
